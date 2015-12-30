@@ -1,0 +1,73 @@
+/* General CSS classes */
+body {
+    background-color: #eee;
+}
+.page {
+    border-radius: 3rem;
+    background-color: #fff;
+    margin: 3%;
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+/* Force scrollbar to appear */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    background-color: rgb(222,222,222);
+    -webkit-box-shadow: 0 0 1rem rgb(255,255,255);
+}
+
+
+/* Report CSS classes for side scrolling */
+.report {
+    table-layout: fixed;
+    width: 100%;
+}
+.report td, th {
+    vertical-align: top;
+    width: 20rem;
+}
+.report th {
+    position: absolute;
+    left: 0;
+    width: 25rem;
+}
+.outer {
+    position: relative
+}
+.inner {
+    overflow-x: scroll;
+    overflow-y: visible;
+    width: 70%;
+    margin-left: 27rem;
+}
+
+.subtotal {
+    background-color: #DDD;
+}
+
+/* Styling for floating percents display */
+#percents {
+    display: none; /* default hidden */
+    border-radius: 1rem;
+    border: 1px solid lightgrey;
+    background-color: white;
+    position: fixed;
+    top: 17%;
+    left: 50%;
+    width: 33%;
+    height: 15%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1;
+}
+#percent_hide {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    font-size: 3rem;
+}

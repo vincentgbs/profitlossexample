@@ -1,0 +1,395 @@
+<html>
+<!-- Global CSS and JS libraries -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+<!-- Local backups included in repo -->
+
+<div class="page">
+    <h3>Widget Seller Profit and Loss Statement</h3>
+    <div class="row">
+        <div class="six columns">
+            <div class="row">Start Date: <input type="text" value="2015-01-01" class="datepicker"></div>
+            <div class="row">End Date: <input type="text" value="2015-02-28" class="datepicker"></div>
+            <div class="row">Date Ranges: <input type="text" value="7" size="6"></div>
+            <div class="row"><input type="button" value="Submit" onclick="alert('This feature is not available in demo mode')"></div>
+        </div>
+        <div class="six columns" id="percents">
+            Percentages <span id="percent_hide"> &#9746 </span>
+            <div class="hidden percent" id=acct99r1>Percent of Revenue: 24.86%<br>Percent of Expense: 81.31%</div>
+            <div class="hidden percent" id=acct99r2>Percent of Revenue: 24.86%<br>Percent of Expense: 82.14%</div>
+            <div class="hidden percent" id=acct99r3>Percent of Revenue: 25.00%<br>Percent of Expense: 81.82%</div>
+            <div class="hidden percent" id=acct99r4>Percent of Revenue: 24.87%<br>Percent of Expense: 82.91%</div>
+            <div class="hidden percent" id=acct99r5>Percent of Revenue: 24.86%<br>Percent of Expense: 82.14%</div>
+            <div class="hidden percent" id=acct99r6>Percent of Revenue: 24.86%<br>Percent of Expense: 81.31%</div>
+            <div class="hidden percent" id=acct99r7>Percent of Revenue: 25.00%<br>Percent of Expense: 82.61%</div>
+            <div class="hidden percent" id=acct99r8>Percent of Revenue: 25.00%<br>Percent of Expense: 80.95%</div>
+            <div class="hidden percent" id=acct99r9>Percent of Revenue: 24.86%<br>Percent of Expense: 81.31%</div>
+
+            <div class="hidden percent" id=acct100r1>Percent of Revenue: 19.14%<br>Percent of Expense: 62.62%</div>
+            <div class="hidden percent" id=acct100r2>Percent of Revenue: 19.46%<br>Percent of Expense: 64.29%</div>
+            <div class="hidden percent" id=acct100r3>Percent of Revenue: 19.44%<br>Percent of Expense: 63.64%</div>
+            <div class="hidden percent" id=acct100r4>Percent of Revenue: 19.74%<br>Percent of Expense: 65.81%</div>
+            <div class="hidden percent" id=acct100r5>Percent of Revenue: 19.46%<br>Percent of Expense: 64.29%</div>
+            <div class="hidden percent" id=acct100r6>Percent of Revenue: 19.14%<br>Percent of Expense: 62.62%</div>
+            <div class="hidden percent" id=acct100r7>Percent of Revenue: 19.74%<br>Percent of Expense: 65.22%</div>
+            <div class="hidden percent" id=acct100r8>Percent of Revenue: 19.12%<br>Percent of Expense: 61.90%</div>
+            <div class="hidden percent" id=acct100r9>Percent of Revenue: 19.14%<br>Percent of Expense: 62.62%</div>
+
+            <div class="hidden percent" id=acct101r1>Percent of Revenue: 5.71%<br>Percent of Expense: 18.69%</div>
+            <div class="hidden percent" id=acct101r2>Percent of Revenue: 5.41%<br>Percent of Expense: 17.86%</div>
+            <div class="hidden percent" id=acct101r3>Percent of Revenue: 5.56%<br>Percent of Expense: 18.18%</div>
+            <div class="hidden percent" id=acct101r4>Percent of Revenue: 5.13%<br>Percent of Expense: 17.09%</div>
+            <div class="hidden percent" id=acct101r5>Percent of Revenue: 5.41%<br>Percent of Expense: 17.86%</div>
+            <div class="hidden percent" id=acct101r6>Percent of Revenue: 5.71%<br>Percent of Expense: 18.69%</div>
+            <div class="hidden percent" id=acct101r7>Percent of Revenue: 5.26%<br>Percent of Expense: 17.39%</div>
+            <div class="hidden percent" id=acct101r8>Percent of Revenue: 5.88%<br>Percent of Expense: 19.05%</div>
+            <div class="hidden percent" id=acct101r9>Percent of Revenue: 5.71%<br>Percent of Expense: 18.69%</div>
+
+            <div class="hidden percent" id=acct102r1>Percent of Revenue: 14.29%<br>Percent of Expense: 46.73%</div>
+            <div class="hidden percent" id=acct102r2>Percent of Revenue: 16.22%<br>Percent of Expense: 53.57%</div>
+            <div class="hidden percent" id=acct102r3>Percent of Revenue: 13.89%<br>Percent of Expense: 45.45%</div>
+            <div class="hidden percent" id=acct102r4>Percent of Revenue: 15.38%<br>Percent of Expense: 51.28%</div>
+            <div class="hidden percent" id=acct102r5>Percent of Revenue: 13.51%<br>Percent of Expense: 44.64%</div>
+            <div class="hidden percent" id=acct102r6>Percent of Revenue: 17.14%<br>Percent of Expense: 56.07%</div>
+            <div class="hidden percent" id=acct102r7>Percent of Revenue: 15.79%<br>Percent of Expense: 52.17%</div>
+            <div class="hidden percent" id=acct102r8>Percent of Revenue: 14.71%<br>Percent of Expense: 47.62%</div>
+            <div class="hidden percent" id=acct102r9>Percent of Revenue: 17.14%<br>Percent of Expense: 56.07%</div>
+
+            <div class="hidden percent" id=acct103r1>Percent of Revenue: 4.86%<br>Percent of Expense: 15.89%</div>
+            <div class="hidden percent" id=acct103r2>Percent of Revenue: 3.24%<br>Percent of Expense: 10.71%</div>
+            <div class="hidden percent" id=acct103r3>Percent of Revenue: 5.56%<br>Percent of Expense: 18.18%</div>
+            <div class="hidden percent" id=acct103r4>Percent of Revenue: 4.36%<br>Percent of Expense: 14.53%</div>
+            <div class="hidden percent" id=acct103r5>Percent of Revenue: 5.95%<br>Percent of Expense: 19.64%</div>
+            <div class="hidden percent" id=acct103r6>Percent of Revenue: 2.00%<br>Percent of Expense: 6.54%</div>
+            <div class="hidden percent" id=acct103r7>Percent of Revenue: 3.95%<br>Percent of Expense: 13.04%</div>
+            <div class="hidden percent" id=acct103r8>Percent of Revenue: 4.41%<br>Percent of Expense: 14.29%</div>
+            <div class="hidden percent" id=acct103r9>Percent of Revenue: 2.00%<br>Percent of Expense: 6.54%</div>
+
+            <div class="hidden percent" id=acct104r1>Percent of Revenue: 0.29%<br>Percent of Expense: 0.93%</div>
+            <div class="hidden percent" id=acct104r2>Percent of Revenue: 0.27%<br>Percent of Expense: 0.89%</div>
+            <div class="hidden percent" id=acct104r3>Percent of Revenue: 0.28%<br>Percent of Expense: 0.91%</div>
+            <div class="hidden percent" id=acct104r4>Percent of Revenue: 0.26%<br>Percent of Expense: 0.85%</div>
+            <div class="hidden percent" id=acct104r5>Percent of Revenue: 0.27%<br>Percent of Expense: 0.89%</div>
+            <div class="hidden percent" id=acct104r6>Percent of Revenue: 0.29%<br>Percent of Expense: 0.93%</div>
+            <div class="hidden percent" id=acct104r7>Percent of Revenue: 0.26%<br>Percent of Expense: 0.87%</div>
+            <div class="hidden percent" id=acct104r8>Percent of Revenue: 0.29%<br>Percent of Expense: 0.95%</div>
+            <div class="hidden percent" id=acct104r9>Percent of Revenue: 0.29%<br>Percent of Expense: 0.93%</div>
+
+            <div class="hidden percent" id=acct105r1>Percent of Revenue: 0.29%<br>Percent of Expense: 0.93%</div>
+            <div class="hidden percent" id=acct105r2>Percent of Revenue: 0.27%<br>Percent of Expense: 0.89%</div>
+            <div class="hidden percent" id=acct105r3>Percent of Revenue: 0.28%<br>Percent of Expense: 0.91%</div>
+            <div class="hidden percent" id=acct105r4>Percent of Revenue: 0.26%<br>Percent of Expense: 0.85%</div>
+            <div class="hidden percent" id=acct105r5>Percent of Revenue: 0.27%<br>Percent of Expense: 0.89%</div>
+            <div class="hidden percent" id=acct105r6>Percent of Revenue: 0.29%<br>Percent of Expense: 0.93%</div>
+            <div class="hidden percent" id=acct105r7>Percent of Revenue: 0.26%<br>Percent of Expense: 0.87%</div>
+            <div class="hidden percent" id=acct105r8>Percent of Revenue: 0.29%<br>Percent of Expense: 0.95%</div>
+            <div class="hidden percent" id=acct105r9>Percent of Revenue: 0.29%<br>Percent of Expense: 0.93%</div>
+
+            <div class="hidden percent" id=acct106r1>Percent of Revenue: 2.57%<br>Percent of Expense: 8.41%</div>
+            <div class="hidden percent" id=acct106r2>Percent of Revenue: 2.16%<br>Percent of Expense: 7.14%</div>
+            <div class="hidden percent" id=acct106r3>Percent of Revenue: 2.50%<br>Percent of Expense: 8.18%</div>
+            <div class="hidden percent" id=acct106r4>Percent of Revenue: 2.05%<br>Percent of Expense: 6.84%</div>
+            <div class="hidden percent" id=acct106r5>Percent of Revenue: 2.43%<br>Percent of Expense: 8.04%</div>
+            <div class="hidden percent" id=acct106r6>Percent of Revenue: 2.29%<br>Percent of Expense: 7.48%</div>
+            <div class="hidden percent" id=acct106r7>Percent of Revenue: 2.37%<br>Percent of Expense: 7.83%</div>
+            <div class="hidden percent" id=acct106r8>Percent of Revenue: 2.35%<br>Percent of Expense: 7.62%</div>
+            <div class="hidden percent" id=acct106r9>Percent of Revenue: 2.57%<br>Percent of Expense: 8.41%</div>
+
+            <div class="hidden percent" id=acct107r1>Percent of Revenue: 2.57%<br>Percent of Expense: 8.41%</div>
+            <div class="hidden percent" id=acct107r2>Percent of Revenue: 2.70%<br>Percent of Expense: 8.93%</div>
+            <div class="hidden percent" id=acct107r3>Percent of Revenue: 2.50%<br>Percent of Expense: 8.18%</div>
+            <div class="hidden percent" id=acct107r4>Percent of Revenue: 2.56%<br>Percent of Expense: 8.55%</div>
+            <div class="hidden percent" id=acct107r5>Percent of Revenue: 2.43%<br>Percent of Expense: 8.04%</div>
+            <div class="hidden percent" id=acct107r6>Percent of Revenue: 2.86%<br>Percent of Expense: 9.35%</div>
+            <div class="hidden percent" id=acct107r7>Percent of Revenue: 2.37%<br>Percent of Expense: 7.83%</div>
+            <div class="hidden percent" id=acct107r8>Percent of Revenue: 2.94%<br>Percent of Expense: 9.52%</div>
+            <div class="hidden percent" id=acct107r9>Percent of Revenue: 2.57%<br>Percent of Expense: 8.41%</div>
+
+            <div class="hidden percent" id=acct30r1>Percent of Revenue: 5.71%<br>Percent of Expense: 18.69%</div>
+            <div class="hidden percent" id=acct30r2>Percent of Revenue: 5.41%<br>Percent of Expense: 17.86%</div>
+            <div class="hidden percent" id=acct30r3>Percent of Revenue: 5.56%<br>Percent of Expense: 18.18%</div>
+            <div class="hidden percent" id=acct30r4>Percent of Revenue: 5.13%<br>Percent of Expense: 17.09%</div>
+            <div class="hidden percent" id=acct30r5>Percent of Revenue: 5.41%<br>Percent of Expense: 17.86%</div>
+            <div class="hidden percent" id=acct30r6>Percent of Revenue: 5.71%<br>Percent of Expense: 18.69%</div>
+            <div class="hidden percent" id=acct30r7>Percent of Revenue: 5.26%<br>Percent of Expense: 17.39%</div>
+            <div class="hidden percent" id=acct30r8>Percent of Revenue: 5.88%<br>Percent of Expense: 19.05%</div>
+            <div class="hidden percent" id=acct30r9>Percent of Revenue: 5.71%<br>Percent of Expense: 18.69%</div>
+
+            <div class="hidden percent" id=acct31r1>Percent of Revenue: 2.57%<br>Percent of Expense: 8.41%</div>
+            <div class="hidden percent" id=acct31r2>Percent of Revenue: 2.16%<br>Percent of Expense: 7.14%</div>
+            <div class="hidden percent" id=acct31r3>Percent of Revenue: 1.94%<br>Percent of Expense: 6.36%</div>
+            <div class="hidden percent" id=acct31r4>Percent of Revenue: 2.05%<br>Percent of Expense: 6.84%</div>
+            <div class="hidden percent" id=acct31r5>Percent of Revenue: 2.43%<br>Percent of Expense: 8.04%</div>
+            <div class="hidden percent" id=acct31r6>Percent of Revenue: 2.29%<br>Percent of Expense: 7.48%</div>
+            <div class="hidden percent" id=acct31r7>Percent of Revenue: 1.84%<br>Percent of Expense: 6.09%</div>
+            <div class="hidden percent" id=acct31r8>Percent of Revenue: 2.35%<br>Percent of Expense: 7.62%</div>
+            <div class="hidden percent" id=acct31r9>Percent of Revenue: 2.57%<br>Percent of Expense: 8.41%</div>
+
+            <div class="hidden percent" id=acct32r1>Percent of Revenue: 2.57%<br>Percent of Expense: 8.41%</div>
+            <div class="hidden percent" id=acct32r2>Percent of Revenue: 2.43%<br>Percent of Expense: 8.04%</div>
+            <div class="hidden percent" id=acct32r3>Percent of Revenue: 2.50%<br>Percent of Expense: 8.18%</div>
+            <div class="hidden percent" id=acct32r4>Percent of Revenue: 2.31%<br>Percent of Expense: 7.69%</div>
+            <div class="hidden percent" id=acct32r5>Percent of Revenue: 2.43%<br>Percent of Expense: 8.04%</div>
+            <div class="hidden percent" id=acct32r6>Percent of Revenue: 2.57%<br>Percent of Expense: 8.41%</div>
+            <div class="hidden percent" id=acct32r7>Percent of Revenue: 2.37%<br>Percent of Expense: 7.83%</div>
+            <div class="hidden percent" id=acct32r8>Percent of Revenue: 2.65%<br>Percent of Expense: 8.57%</div>
+            <div class="hidden percent" id=acct32r9>Percent of Revenue: 2.57%<br>Percent of Expense: 8.41%</div>
+        </div>
+    </div>
+
+    <div class="outer"><div class="inner"><table class="report">
+        <tr><th>Dates</th>
+            <td>Jan 1 to Jan 8</td>
+            <td>Jan 8 to Jan 15</td>
+            <td>Jan 15 to Jan 22</td>
+            <td>Jan 22 to Jan 29</td>
+            <td>Jan 29 to Feb 5</td>
+            <td>Feb 5 to Feb 12</td>
+            <td>Feb 12 to Feb 19</td>
+            <td>Feb 19 to Feb 26</td>
+            <td>Feb 26 to Mar 5</td>
+        </tr>
+        <tr class="account" id="acct1" name="Sales Revenue">
+            <th>Sales Revenue</th>
+            <td class="range" acctid="acct1" colid="r1">$35,000</td>
+            <td class="range" acctid="acct1" colid="r2">$37,000</td>
+            <td class="range" acctid="acct1" colid="r3">$36,000</td>
+            <td class="range" acctid="acct1" colid="r4">$39,000</td>
+            <td class="range" acctid="acct1" colid="r5">$37,000</td>
+            <td class="range" acctid="acct1" colid="r6">$35,000</td>
+            <td class="range" acctid="acct1" colid="r7">$38,000</td>
+            <td class="range" acctid="acct1" colid="r8">$34,000</td>
+            <td class="range" acctid="acct1" colid="r9">$35,000</td>
+        </tr>
+        <tr class="subtotal" id="acct-1" name="Revenue Subtotal">
+            <th class="subtotal">Revenue Subtotal</th>
+            <td class="range" acctid="acct-1" colid="r1">$35,000</td>
+            <td class="range" acctid="acct-1" colid="r2">$37,000</td>
+            <td class="range" acctid="acct-1" colid="r3">$36,000</td>
+            <td class="range" acctid="acct-1" colid="r4">$39,000</td>
+            <td class="range" acctid="acct-1" colid="r5">$37,000</td>
+            <td class="range" acctid="acct-1" colid="r6">$35,000</td>
+            <td class="range" acctid="acct-1" colid="r7">$38,000</td>
+            <td class="range" acctid="acct-1" colid="r8">$34,000</td>
+            <td class="range" acctid="acct-1" colid="r9">$35,000</td>
+        </tr>
+        <tr class="account" id="acct99" children='["acct100", "acct101"]' name="Amazon Seller Fees">
+            <th><span>&#9899</span> Amazon Seller Fees</th>
+            <td class="range" acctid="acct99" colid="r1">$8,700</td>
+            <td class="range" acctid="acct99" colid="r2">$9,200</td>
+            <td class="range" acctid="acct99" colid="r3">$9,000</td>
+            <td class="range" acctid="acct99" colid="r4">$9,700</td>
+            <td class="range" acctid="acct99" colid="r5">$9,200</td>
+            <td class="range" acctid="acct99" colid="r6">$8,700</td>
+            <td class="range" acctid="acct99" colid="r7">$9,500</td>
+            <td class="range" acctid="acct99" colid="r8">$8,500</td>
+            <td class="range" acctid="acct99" colid="r9">$8,700</td>
+        </tr>
+        <tr class="hidden account" id="acct100" children='["acct102", "acct103"]' name="Amazon NA Fees">
+            <th><span>&#9899</span> -> Amazon NA Fees</th>
+            <td class="range" acctid="acct100" colid="r1">$6,700</td>
+            <td class="range" acctid="acct100" colid="r2">$7,200</td>
+            <td class="range" acctid="acct100" colid="r3">$7,000</td>
+            <td class="range" acctid="acct100" colid="r4">$7,700</td>
+            <td class="range" acctid="acct100" colid="r5">$7,200</td>
+            <td class="range" acctid="acct100" colid="r6">$6,700</td>
+            <td class="range" acctid="acct100" colid="r7">$7,500</td>
+            <td class="range" acctid="acct100" colid="r8">$6,500</td>
+            <td class="range" acctid="acct100" colid="r9">$6,700</td>
+        </tr>
+        <tr class="hidden account" id="acct102" name="Amazon US Fees">
+            <th> - -> Amazon US Fees</th>
+            <td class="range" acctid="acct102" colid="r1">$5,000</td>
+            <td class="range" acctid="acct102" colid="r2">$6,000</td>
+            <td class="range" acctid="acct102" colid="r3">$5,000</td>
+            <td class="range" acctid="acct102" colid="r4">$6,000</td>
+            <td class="range" acctid="acct102" colid="r5">$5,000</td>
+            <td class="range" acctid="acct102" colid="r6">$6,000</td>
+            <td class="range" acctid="acct102" colid="r7">$6,000</td>
+            <td class="range" acctid="acct102" colid="r8">$5,000</td>
+            <td class="range" acctid="acct102" colid="r9">$6,000</td>
+        </tr>
+        <tr class="hidden account" id="acct103" name="Amazon CA Fees">
+            <th> - -> Amazon CA Fees</th>
+            <td class="range" acctid="acct103" colid="r1">$1,700</td>
+            <td class="range" acctid="acct103" colid="r2">$1,200</td>
+            <td class="range" acctid="acct103" colid="r3">$2,000</td>
+            <td class="range" acctid="acct103" colid="r4">$1,700</td>
+            <td class="range" acctid="acct103" colid="r5">$2,200</td>
+            <td class="range" acctid="acct103" colid="r6">$700</td>
+            <td class="range" acctid="acct103" colid="r7">$1,500</td>
+            <td class="range" acctid="acct103" colid="r8">$1,500</td>
+            <td class="range" acctid="acct103" colid="r9">$700</td>
+        </tr>
+        <tr class="hidden account" id="acct101" children='["acct104", "acct105", "acct106", "acct107"]' name="Amazon EU Fees">
+            <th><span>&#9899</span> -> Amazon EU Fees</th>
+            <td class="range" acctid="acct101" colid="r1">$2,000</td>
+            <td class="range" acctid="acct101" colid="r2">$2,000</td>
+            <td class="range" acctid="acct101" colid="r3">$2,000</td>
+            <td class="range" acctid="acct101" colid="r4">$2,000</td>
+            <td class="range" acctid="acct101" colid="r5">$2,000</td>
+            <td class="range" acctid="acct101" colid="r6">$2,000</td>
+            <td class="range" acctid="acct101" colid="r7">$2,000</td>
+            <td class="range" acctid="acct101" colid="r8">$2,000</td>
+            <td class="range" acctid="acct101" colid="r9">$2,000</td>
+        </tr>
+        <tr class="hidden account" id="acct104" name="Amazon ES Fees">
+            <th> - -> Amazon ES Fees</th>
+            <td class="range" acctid="acct104" colid="r1">$100</td>
+            <td class="range" acctid="acct104" colid="r2">$100</td>
+            <td class="range" acctid="acct104" colid="r3">$100</td>
+            <td class="range" acctid="acct104" colid="r4">$100</td>
+            <td class="range" acctid="acct104" colid="r5">$100</td>
+            <td class="range" acctid="acct104" colid="r6">$100</td>
+            <td class="range" acctid="acct104" colid="r7">$100</td>
+            <td class="range" acctid="acct104" colid="r8">$100</td>
+            <td class="range" acctid="acct104" colid="r9">$100</td>
+        </tr>
+        <tr class="hidden account" id="acct105" name="Amazon IT Fees">
+            <th> - -> Amazon IT Fees</th>
+            <td class="range" acctid="acct105" colid="r1">$100</td>
+            <td class="range" acctid="acct105" colid="r2">$100</td>
+            <td class="range" acctid="acct105" colid="r3">$100</td>
+            <td class="range" acctid="acct105" colid="r4">$100</td>
+            <td class="range" acctid="acct105" colid="r5">$100</td>
+            <td class="range" acctid="acct105" colid="r6">$100</td>
+            <td class="range" acctid="acct105" colid="r7">$100</td>
+            <td class="range" acctid="acct105" colid="r8">$100</td>
+            <td class="range" acctid="acct105" colid="r9">$100</td>
+        </tr>
+        <tr class="hidden account" id="acct106" name="Amazon DE Fees">
+            <th> - -> Amazon DE Fees</th>
+            <td class="range" acctid="acct106" colid="r1">$900</td>
+            <td class="range" acctid="acct106" colid="r2">$800</td>
+            <td class="range" acctid="acct106" colid="r3">$900</td>
+            <td class="range" acctid="acct106" colid="r4">$800</td>
+            <td class="range" acctid="acct106" colid="r5">$900</td>
+            <td class="range" acctid="acct106" colid="r6">$800</td>
+            <td class="range" acctid="acct106" colid="r7">$900</td>
+            <td class="range" acctid="acct106" colid="r8">$800</td>
+            <td class="range" acctid="acct106" colid="r9">$900</td>
+        </tr>
+        <tr class="hidden account" id="acct107" name="Amazon UK Fees">
+            <th> - -> Amazon UK Fees</th>
+            <td class="range" acctid="acct107" colid="r1">$900</td>
+            <td class="range" acctid="acct107" colid="r2">$1,000</td>
+            <td class="range" acctid="acct107" colid="r3">$900</td>
+            <td class="range" acctid="acct107" colid="r4">$1,000</td>
+            <td class="range" acctid="acct107" colid="r5">$900</td>
+            <td class="range" acctid="acct107" colid="r6">$1,000</td>
+            <td class="range" acctid="acct107" colid="r7">$900</td>
+            <td class="range" acctid="acct107" colid="r8">$1,000</td>
+            <td class="range" acctid="acct107" colid="r9">$900</td>
+        </tr>
+        <tr class="account" id="acct30" children='["acct31", "acct32"]' name="Office Expenses">
+            <th><span>&#9899</span>Office Expenses</th>
+            <td class="range" acctid="acct30" colid="r1">$2,000</td>
+            <td class="range" acctid="acct30" colid="r2">$2,000</td>
+            <td class="range" acctid="acct30" colid="r3">$2,000</td>
+            <td class="range" acctid="acct30" colid="r4">$2,000</td>
+            <td class="range" acctid="acct30" colid="r5">$2,000</td>
+            <td class="range" acctid="acct30" colid="r6">$2,000</td>
+            <td class="range" acctid="acct30" colid="r7">$2,000</td>
+            <td class="range" acctid="acct30" colid="r8">$2,000</td>
+            <td class="range" acctid="acct30" colid="r9">$2,000</td>
+        </tr>
+        <tr class="hidden account" id="acct31" name="Office Supplies Expenses">
+            <th> -> Office Supplies Expenses</th>
+            <td class="range" acctid="acct31" colid="r1">$900</td>
+            <td class="range" acctid="acct31" colid="r2">$800</td>
+            <td class="range" acctid="acct31" colid="r3">$700</td>
+            <td class="range" acctid="acct31" colid="r4">$800</td>
+            <td class="range" acctid="acct31" colid="r5">$900</td>
+            <td class="range" acctid="acct31" colid="r6">$800</td>
+            <td class="range" acctid="acct31" colid="r7">$700</td>
+            <td class="range" acctid="acct31" colid="r8">$800</td>
+            <td class="range" acctid="acct31" colid="r9">$900</td>
+        </tr>
+        <tr class="hidden account" id="acct32" name="Software Expenses">
+            <th> -> Software Expenses</th>
+            <td class="range" acctid="acct32" colid="r1">$900</td>
+            <td class="range" acctid="acct32" colid="r2">$900</td>
+            <td class="range" acctid="acct32" colid="r3">$900</td>
+            <td class="range" acctid="acct32" colid="r4">$900</td>
+            <td class="range" acctid="acct32" colid="r5">$900</td>
+            <td class="range" acctid="acct32" colid="r6">$900</td>
+            <td class="range" acctid="acct32" colid="r7">$900</td>
+            <td class="range" acctid="acct32" colid="r8">$900</td>
+            <td class="range" acctid="acct32" colid="r9">$900</td>
+        </tr>
+        <tr class="subtotal" id="acct-2" name="Expense Subtotal">
+            <th class="subtotal">Expense Subtotal</th>
+            <td class="range" acctid="acct-2" colid="r1">$10,700</td>
+            <td class="range" acctid="acct-2" colid="r2">$11,200</td>
+            <td class="range" acctid="acct-2" colid="r3">$11,000</td>
+            <td class="range" acctid="acct-2" colid="r4">$11,700</td>
+            <td class="range" acctid="acct-2" colid="r5">$11,200</td>
+            <td class="range" acctid="acct-2" colid="r6">$10,700</td>
+            <td class="range" acctid="acct-2" colid="r7">$11,500</td>
+            <td class="range" acctid="acct-2" colid="r8">$10,500</td>
+            <td class="range" acctid="acct-2" colid="r9">$10,700</td>
+        </tr>
+        <tr class="subtotal" id="acct-3" name="Net Profit and Loss">
+            <th class="subtotal">Net Profit and Loss</th>
+            <td class="range" acctid="acct-3" colid="r1">$24,300</td>
+            <td class="range" acctid="acct-3" colid="r2">$25,800</td>
+            <td class="range" acctid="acct-3" colid="r3">$25,000</td>
+            <td class="range" acctid="acct-3" colid="r4">$27,300</td>
+            <td class="range" acctid="acct-3" colid="r5">$25,800</td>
+            <td class="range" acctid="acct-3" colid="r6">$24,300</td>
+            <td class="range" acctid="acct-3" colid="r7">$26,500</td>
+            <td class="range" acctid="acct-3" colid="r8">$23,500</td>
+            <td class="range" acctid="acct-3" colid="r9">$24,300</td>
+        </tr>
+    </table></div></div>
+</div>
+
+<div class="page">
+    <h4>Expense Graph</h4>
+    <canvas id="line_graph" width="999" height="600"></canvas>
+</div>
+
+<script>
+/* Data provided from backend object are written to the html file, not the js file */
+var data = {
+    labels: ["Jan 1 to Jan 8",
+            "Jan 8 to Jan 15",
+            "Jan 15 to Jan 22",
+            "Jan 22 to Jan 29",
+            "Jan 29 to Feb 5",
+            "Feb 5 to Feb 12",
+            "Feb 12 to Feb 19",
+            "Feb 19 to Feb 26",
+            "Feb 26 to Mar 5"],
+    datasets: {
+        "acct99": {
+            label: "Amazon Seller Fees",
+            fillColor: "rgba(255,255,255,0)",
+            strokeColor: "rgba(0,0,0,1)",
+            pointColor: "rgba(0,0,0,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(0,0,0,1)",
+            data: [8700, 9200, 9000, 9700, 9200, 8700, 9500, 8500, 8700]
+        },
+        "acct30": {
+            label: "Office Expenses",
+            fillColor: "rgba(255,255,255,0)",
+            strokeColor: "rgba(0,0,0,1)",
+            pointColor: "rgba(0,0,0,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(0,0,0,1)",
+            data: [2000, 2000, 2000, 2000, 2000, 2000, 2000, 2000, 2000]
+        },
+    }
+};
+</script>
+
+<link rel="stylesheet" href="css/base.css">
+<script src="js/functions.js"></script>
+
+</html>
