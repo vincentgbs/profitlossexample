@@ -94,6 +94,11 @@ $(".range").hover(function () {
     $("#" + $(this).attr('acctid') + $(this).attr('colid')).hide();
 });
 // minimize percent box
+$(document).keyup(function(e) {
+    if (e.keyCode == 27) {
+        $("#percents").hide();
+    }
+});
 $( "#percent_hide" ).on("click", function() {
     $("#percents").hide();
 });
